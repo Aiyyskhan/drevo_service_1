@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/Aiyyskhan/drevo_service_1/main/assets/drevo_logo.jpg" align="middle" width="1000"/>
+    <img src="./assets/drevo_logo.jpg" alt="DREVO logo"/>
     <h1>DREVO</h1>
 </div>
 
