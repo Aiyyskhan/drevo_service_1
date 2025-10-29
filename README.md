@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./assets/drevo_logo.jpg" alt="DREVO logo"/>
+    <img src="./assets/drevo_logo.jpg" width="30%" alt="DREVO logo"/>
     <h1>DREVO</h1>
 </div>
 
