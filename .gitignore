@@ -1,0 +1,11 @@
+*.ipynb_checkpoints/
+*.debug
+*.vscode/
+.__pycache__/
+__pycache__/
+.mypy_cache/
+*.pyc
+
+**/.env
+**/*venv*/
+**/keypair_*.json

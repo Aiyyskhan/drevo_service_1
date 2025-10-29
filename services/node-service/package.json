@@ -1,0 +1,21 @@
+{
+  "name": "node-service",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@metaplex-foundation/mpl-token-metadata": "^3.4.0",
+    "@metaplex-foundation/umi": "^1.4.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^1.4.1",
+    "@metaplex-foundation/umi-uploader-irys": "^1.4.1",
+    "amqplib": "^0.10.3",
+    "axios": "^1.7.2"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.8.0",
+    "@types/node": "^18.16.19",
+    "typescript": "^5.3.0"
+  }
+}
