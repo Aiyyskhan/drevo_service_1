@@ -12,8 +12,13 @@ import genetic_algorithm as ga
 import neural_network as nn
 from genome_uploader import upload
 
-ORIGIN_MODE = False # False если эволюция инициируется от сохраненных родителей
+ORIGIN_MODE = False # False if evolution is initiated from preserved parents
 SAVING_WINNER = True
+
+# path for loading the genome
+LOAD_PATH = "genomes/20250921/leaders_5.50.3_2_1_best.gif"
+# path for saving champions
+SAVE_PATH = "genomes/20251029/"
 
 VAL = np.linspace(-1, 1, 256) #9)
 
@@ -140,10 +145,6 @@ class Game:
         self.best_players = []
         self.best_player_reward = 0.0
 
-        # основные пути загрузки родителей и сохранения финишеров
-        self.main_load_path = "genomes/20250921/leaders_5.50.3_2_1_best.gif" #"data/genomes/leaders_5.3.50_2.gif"
-        self.main_save_path = "genomes/20251029/"
-
         self.save_number = 0
         self.load_number = 0
 
@@ -169,7 +170,7 @@ class Game:
         if ORIGIN_MODE:
             self.weight_ids_matrix_list = weight_ids_matrix_build(NUM_PLAYERS, self.nn_parameters[0], self.nn_parameters[1], self.nn_parameters[2])
         else:
-            self.loading(self.main_load_path)
+            self.loading(LOAD_PATH)
 
         self.num_individuals = len(self.weight_ids_matrix_list)
         print(f"Population size: {self.num_individuals}")
@@ -238,7 +239,7 @@ class Game:
                     # self.number_of_winners += 1
                     self.best_player_reward = 0.0
             if len(winners) > 0:
-                path = f"{self.main_save_path}leaders_{self.nn_parameters[0]}.{self.nn_parameters[1]}.{self.nn_parameters[2]}_{self.generation}_{self.save_number}.gif"
+                path = f"{SAVE_PATH}leaders_{self.nn_parameters[0]}.{self.nn_parameters[1]}.{self.nn_parameters[2]}_{self.generation}_{self.save_number}.gif"
                 self.saving(path, winners)
                 #self.running = False
 
@@ -266,7 +267,7 @@ class Game:
                 if player.reached_finish == "v":
                     winners.append(self.weight_ids_matrix_list[idx])
             if len(winners) > 0:
-                path = f"{self.main_save_path}leaders_{self.nn_parameters[0]}.{self.nn_parameters[1]}.{self.nn_parameters[2]}_{self.generation}_{self.save_number}.gif"
+                path = f"{SAVE_PATH}leaders_{self.nn_parameters[0]}.{self.nn_parameters[1]}.{self.nn_parameters[2]}_{self.generation}_{self.save_number}.gif"
                 self.saving(path, winners)
                 print(f"✅ Saved: {path}")
                 
